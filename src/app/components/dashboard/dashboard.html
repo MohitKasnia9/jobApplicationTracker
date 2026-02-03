@@ -1,0 +1,66 @@
+<div>
+    <div class="d-flex flem-row p-2 w-100 container">
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body text-center bg-light   bg-opacity-25 border border-light border-colo">
+                <h5 class="card-title">Total Applied</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary text-light">{{ currentApplications.length }}</h6>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body text-center bg-warning bg-opacity-25 border border-warning">
+                <h5 class="card-title">Interviews</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary text-warning">{{getTotalInterviews()}}</h6>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body text-center bg-success bg-opacity-25 border border-success">
+                <h5 class="card-title">Offers</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary text-success">{{getTotalOffers()}}</h6>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body text-center bg-danger bg-opacity-25 border border-danger">
+                <h5 class="card-title ">Rejected</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary text-danger mx-auto">{{getTotalRejected()}}</h6>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="d-flex flem-row p-2 w-100 justify-content-center mt-5 mb-3 ">
+            <form class="d-flex justify-content-between" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #filter/>
+                <button class="btn btn-outline-success" type="button" (click)="filterApplication(filter.value)">Search</button>
+            </form>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Company</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Applied</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                   
+                        @for (application of currentApplicationsFiltered; track application) {
+                            <tr>
+                                <td  class="table-primary">{{ application.companyName }}</td>
+                                <td  class="table-primary">{{ application.position }}</td>
+                                <td  class="table-primary">{{ application.location }}</td>
+                                <td  class="table-primary">{{ application.status }}</td>
+                                <td  class="table-primary">{{ application.jobLink }}</td>
+                                <td  class="table-primary">{{ application.notes }}</td>
+                            </tr>  
+                        }
+                 </tbody>
+             </table>
+
+
+        </div>
+    </div>
+
+</div>

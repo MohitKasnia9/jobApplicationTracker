@@ -1,0 +1,47 @@
+<div>
+  <form [formGroup]="applicationForm" class="application-form mx-auto">
+    <div class="form-grid mx-auto p-2 box-shadow-sm " class="border">
+      <div class="text-center bg-primary bg-opacity-72 text-white pt-2 pb-2">
+        <h3>Add Job Application</h3>
+      </div>
+      <div class="mt-2">
+        <div class="p-3">
+          <div class="fw-medium">Company Name</div>
+          <input formControlName="companyName" class="w-100">
+          <div *ngIf="applicationForm.get('companyName').touched && applicationForm.get('companyName').invalid" class="text-danger fs-6">company name is required</div>
+        </div>
+        <div class="p-3">
+          <div  class="fw-medium">Position</div>
+          <input formControlName="position" class="w-100">
+          <div *ngIf="applicationForm.get('position').touched && applicationForm.get('position').invalid" class="text-danger fs-6">position is Required</div>
+        </div>
+        <div class="p-3">
+          <div class="fw-medium">location</div>
+          <input formControlName="location" class="w-100">
+        </div>
+        <div class="p-3">
+          <div class="fw-medium">Status</div>
+          <select formControlName="status" class="form-control w-100">
+            <option value="applied" >Applied</option>
+            <option value="interviewed">Interviewed</option>
+            <option value="offered">Offered</option>
+            <option value="rejected">Rejected</option>
+          </select>
+          <div *ngIf="applicationForm.get('status').touched && applicationForm.get('status').invalid" class="text-danger fs-6">status is required</div>
+        </div>
+        <div class="p-3">
+          <div class="fw-medium">Job Link(Url)</div>
+          <input formControlName="jobLink" class="w-100">
+          <div *ngIf="applicationForm.get('jobLink').touched && applicationForm.get('jobLink').invalid" class="text-danger fs-6">job link is required</div>
+        </div>
+        <div class="p-3">
+          <div class="fw-medium">Notes</div>
+          <input formControlName="notes" class="w-100">
+        </div>
+      </div>
+      <div class="mb-4 mt-2 text-center">
+        <button type="button" class="btn btn-success btn-medium padding" (click)="onApplicationSubmit()">Success</button>
+      </div>
+    </div>
+  </form>
+</div>

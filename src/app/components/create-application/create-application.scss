@@ -1,0 +1,37 @@
+.application-form {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.1);
+}
+
+
+.padding-left-50 {
+  padding-left: 50% !important;
+}
+
+.padding-right-50 {
+  padding-right: 50% !important;
+}

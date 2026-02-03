@@ -1,0 +1,26 @@
+.navbar{
+    background: rgb(99, 99, 247) !important;
+    color : white !important;
+}
+
+
+a{
+    color: white !important;
+}
+
+
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+
+    flex : 1
+
+}
+
+.nav-content {
+    padding-right: 0px ;
+}
+
+.navbarNavDropdown{
+    padding-right: 0px;
+}
