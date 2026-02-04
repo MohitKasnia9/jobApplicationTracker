@@ -1,0 +1,32 @@
+<div>
+    <div >
+        <div>
+            <form [formGroup]="loginForm" class="mx-auto displayModal w-25  border border-dark ">
+                <div>
+                    <div class="p-3 formTitle "> 
+                        <div class="text-center fs-5">LOGIN</div>
+                    </div>
+                    <div class="p-3">
+                        <div class="fw-medium">Email</div>
+                        <input formControlName="email" class="w-100 input">
+                        <div *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"
+                            class="text-danger fs-6">email is required</div>
+                    </div>
+                    <div class="p-3">
+                        <div class="fw-medium">Password</div>
+                        <input formControlName="password" class="w-100 input">
+                        <div *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"
+                            class="text-danger fs-6">password is required</div>
+                    </div>
+                    <div class="p-3 text-center ">
+                        <button class="btn-primary mx-auto">Submit</button>
+                    </div>
+                    <div class="p-2 formFooter "> 
+                        <div class="text-center fs-6">New User SignUp?</div>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
