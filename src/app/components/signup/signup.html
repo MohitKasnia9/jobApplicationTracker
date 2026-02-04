@@ -1,0 +1,44 @@
+<div>
+    <div >
+        <div>
+            <form [formGroup]="signUpForm" class="mx-auto displayModal w-25  border border-dark ">
+                <div>
+                    <div class="p-3 formTitle "> 
+                        <div class="text-center fs-5">SIGN UP</div>
+                    </div>
+                    <div class="p-3">
+                        <div class="fw-medium">Name</div>
+                        <input formControlName="name" class="w-100 input">
+                        <div *ngIf="signUpForm.get('name').touched && signUpForm.get('name').invalid"
+                            class="text-danger fs-6">name is required</div>
+                    </div>
+                    <div class="p-3">
+                        <div class="fw-medium">Email</div>
+                        <input formControlName="email" class="w-100 input">
+                        <div *ngIf="signUpForm.get('email').touched && signUpForm.get('email').invalid"
+                            class="text-danger fs-6">email is required</div>
+                    </div>
+                    <div class="p-3">
+                        <div class="fw-medium">Password</div>
+                        <input formControlName="password" class="w-100 input">
+                        <div *ngIf="signUpForm.get('password').touched && signUpForm.get('password').invalid"
+                            class="text-danger fs-6">password is required</div>
+                    </div>
+                     <div class="p-3">
+                        <div class="fw-medium">Confirm Password</div>
+                        <input formControlName="confirmPassword" class="w-100 input">
+                        <div *ngIf="signUpForm.get('confirmPassword').touched && signUpForm.get('confirmPassword').invalid"
+                            class="text-danger fs-6">confirm password is required</div>
+                    </div>
+                    <div class="p-3 text-center ">
+                        <button class="btn-primary mx-auto">Submit</button>
+                    </div>
+                    <div class="p-2 formFooter "> 
+                        <div class="text-center fs-6">Already a user Login?</div>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
